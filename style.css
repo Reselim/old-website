@@ -1,0 +1,93 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: "Sniglet", cursive;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+a {
+	display: flex;
+}
+
+#avatar {
+	width: 140px;
+	height: 200px;
+	margin-bottom: 70px;
+}
+
+#heart {
+	margin-top: 70px;
+	transform: rotate(13deg);
+	transition: transform 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#heart > img {
+	min-width: 22px;
+	max-width: 22px;
+}
+
+#heart:hover {
+	transform: scale(150%);
+}
+
+.category {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.category + .category {
+	margin-top: 30px;
+}
+
+.category-header {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.category-content {
+	display: flex;
+	flex-direction: row;
+}
+
+.project {
+	width: 140px;
+	height: 90px;
+	border-radius: 6px;
+	border: 1px solid #EFEFEF;
+	margin: 7px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.project > img {
+	max-width: 110px;
+	max-height: 70px;
+}
+
+.social {
+	margin: 0 9px 0 9px;
+	transition: opacity 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.social > img {
+	min-height: 38px;
+	max-height: 38px;
+}
+
+.category-social:hover > .social {
+	opacity: 50%;
+}
+
+.category-social:hover > .social:hover {
+	opacity: 100%;
+}

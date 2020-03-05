@@ -3,14 +3,20 @@ html, body {
 	padding: 0;
 	height: 100%;
 	width: 100%;
+	overflow: hidden;
 }
 
 body {
 	font-family: "Sniglet", cursive;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+}
+
+#container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 a {
@@ -64,10 +70,17 @@ a {
 	height: 90px;
 	border-radius: 6px;
 	border: 1px solid #EFEFEF;
-	margin: 7px;
+	background: #FFFFFF;
+	margin: 0 7px 0 7px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.project:hover {
+	transform: translate(0, -5px) scale(1.05) rotate(2deg);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
 }
 
 .project > img {

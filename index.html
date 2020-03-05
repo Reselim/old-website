@@ -2,42 +2,64 @@
 <html>
 	<head>
 		<title>reselim</title>
+		<meta charset="UTF-8">
 		<link href="style.css" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap" rel="stylesheet">
 	</head>
 
 	<body>
-		<img src="assets/avatar.png" id="avatar">
+		<div id="container">
+			<img src="assets/avatar.png" id="avatar">
 
-		<div class="category">
-			<span class="category-header">projects</span>
-			<div class="category-content category-projects">
-				<a href="https://devforum.roblox.com/t/introducing-inklii-the-community-drawing-game/450433">
-					<div class="project">
-						<img src="assets/logos/inklii.png">
-					</div>
-				</a>
+			<div class="category">
+				<span class="category-header">projects</span>
+				<div class="category-content category-projects">
+					<a href="https://devforum.roblox.com/t/introducing-inklii-the-community-drawing-game/450433">
+						<div class="project">
+							<img src="assets/logos/inklii.png">
+						</div>
+					</a>
 
-				<a href="https://www.roblox.com/games/4743812019/Vibe-Station">
-					<div class="project">
-						<img src="assets/logos/vibe-station.png">
-					</div>
-				</a>
+					<a href="https://www.roblox.com/games/4743812019/Vibe-Station">
+						<div class="project">
+							<img src="assets/logos/vibe-station.png">
+						</div>
+					</a>
+				</div>
 			</div>
+
+			<div class="category">
+				<span class="category-header">social</span>
+				<div class="category-content category-social">
+					<a href="https://twitter.com/Reselim_" class="social" title="Twitter"><img src="assets/social/twitter.svg"></a>
+					<a href="https://github.com/Reselim" class="social" title="Github"><img src="assets/social/github.svg"></a>
+					<a href="https://www.roblox.com/users/24346602/profile" class="social" title="Roblox"><img src="assets/social/roblox.svg"></a>
+					<a href="https://open.spotify.com/user/notreselim" class="social" title="Spotify"><img src="assets/social/spotify.svg"></a>
+				</div>
+			</div>
+
+			<a id="heart" href="https://cyanobject.carrd.co">
+				<img src="assets/heart.svg">
+			</a>
 		</div>
 
-		<div class="category">
-			<span class="category-header">social</span>
-			<div class="category-content category-social">
-				<a href="https://twitter.com/Reselim_" class="social" title="Twitter"><img src="assets/social/twitter.svg"></a>
-				<a href="https://github.com/Reselim" class="social" title="Github"><img src="assets/social/github.svg"></a>
-				<a href="https://www.roblox.com/users/24346602/profile" class="social" title="Roblox"><img src="assets/social/roblox.svg"></a>
-				<a href="https://open.spotify.com/user/notreselim" class="social" title="Spotify"><img src="assets/social/spotify.svg"></a>
-			</div>
-		</div>
+		<script>
+			const container = document.getElementById("container")
 
-		<a id="heart" href="https://cyanobject.carrd.co">
-			<img src="assets/heart.svg">
-		</a>
+			function updateScaling() {
+				let bodyWidth = document.body.offsetWidth
+				let bodyHeight = document.body.offsetHeight
+
+				let containerWidth = container.offsetWidth
+				let containerHeight = container.offsetHeight
+
+				let scaleFactor = (1 / Math.max(containerWidth / bodyWidth, containerHeight / bodyHeight)) * 0.75
+
+				container.style.transform = `scale(${scaleFactor})`
+			}
+
+			updateScaling()
+			window.addEventListener("resize", updateScaling)
+		</script>
 	</body>
 </html>

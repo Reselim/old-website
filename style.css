@@ -35,7 +35,7 @@ a {
 }
 
 #heart:hover {
-	transform: scale(150%);
+	transform: scale(1.5);
 }
 
 .category {
